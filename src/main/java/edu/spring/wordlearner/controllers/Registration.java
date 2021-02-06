@@ -25,13 +25,9 @@ public class Registration {
     }
 
     @PostMapping
-    public String login(@ModelAttribute("account") AccountDTO accountDTO) {
+    public String signUp(@ModelAttribute("account") AccountDTO accountDTO) {
         if (accountDTO.getPassword().equals(accountDTO.getRepeatedPassword())) {
-            if (accountDAO.loginExists(accountDTO.getLogin())) {
-                System.err.println("User with such login already exists!");
-            } else {
-                accountDAO.create(accountDTO.getLogin(), accountDTO.getPassword());
-            }
+            accountDAO.create(accountDTO.getLogin(), accountDTO.getPassword());
         } else {
             System.err.println("Passwords differ!");
         }

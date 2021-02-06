@@ -25,12 +25,12 @@ public class Login {
     }
 
     @PostMapping
-    public String login(@ModelAttribute("account") Account account) {
-        if (accountDAO.accountExists(account)) {
+    public String logIn(@ModelAttribute("account") Account account) {
+        if (accountDAO.exists(account.getLogin(), account.getPassword())) {
             System.err.println("Login...");
             return "redirect:/";
         } else {
-            System.err.println("Account doesn't exist!");
+            System.err.println("Check your login and password!");
             return "redirect:/login";
         }
     }
