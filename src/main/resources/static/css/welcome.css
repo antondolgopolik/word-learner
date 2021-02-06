@@ -1,0 +1,22 @@
+.container {
+    width: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    margin-inside: 20px;
+}
+
+.field-div {
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.submit-button {
+    width: 50%;
+    height: 30px;
+    margin-right: 55px;
+}

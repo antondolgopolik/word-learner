@@ -1,3 +1,3 @@
 # Word Learner
 
-Spring MVC web application for creating dictionaries and learning words by them
+Spring MVC web application for compiling your own dictionaries and learning words from them
