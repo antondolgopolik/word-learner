@@ -19,12 +19,12 @@ public class Registration {
     }
 
     @GetMapping
-    public String registration(Model model) {
+    public String index(Model model) {
         model.addAttribute("account", new AccountDTO());
         return "registration";
     }
 
-    @PostMapping
+    @PostMapping("/signUp")
     public String signUp(@ModelAttribute("account") AccountDTO accountDTO) {
         if (accountDTO.getPassword().equals(accountDTO.getRepeatedPassword())) {
             accountDAO.create(accountDTO.getLogin(), accountDTO.getPassword());

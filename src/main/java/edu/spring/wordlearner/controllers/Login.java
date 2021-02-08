@@ -19,12 +19,12 @@ public class Login {
     }
 
     @GetMapping
-    public String login(Model model) {
+    public String index(Model model) {
         model.addAttribute("account", new Account());
         return "login";
     }
 
-    @PostMapping
+    @PostMapping("/logIn")
     public String logIn(@ModelAttribute("account") Account account) {
         if (accountDAO.exists(account.getLogin(), account.getPassword())) {
             System.err.println("Login...");
